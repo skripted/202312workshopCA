@@ -52,14 +52,14 @@ module "oke" {
 
 
   worker_pools = {
-  /* system = {
+    system = {
      description = "CPU pool", enabled = true,
-     mode = "node-pool", boot_volume_size = 150, shape = "VM.Standard.E4.Flex", ocpus = 2, memory = 32, size = 3
+     mode = "node-pool", boot_volume_size = 150, shape = "VM.Standard.E4.Flex", ocpus = 1, memory = 12, size = 3
     }
-  */  
-    armpool = {
-     description = "ARM CPU Pool", enabled = true,
-     mode = "node-pool", boot_volume_size = 150, shape = "VM.Standard.A1.Flex", ocpus = 4, memory = 32, size = 3
+    
+    app = {
+     description = "App Pool", enabled = true,
+     mode = "node-pool", boot_volume_size = 150, shape = "VM.Standard3.Flex", ocpus = 1, memory = 8, size = 2
     }
   }
 }
